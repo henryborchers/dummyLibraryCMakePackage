@@ -1,4 +1,4 @@
-#include "library.h"
+#include "CDummy.h"
 #include "version.h"
 #include <stdio.h>
 
