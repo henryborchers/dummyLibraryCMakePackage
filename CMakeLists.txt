@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(CDummy_library)
-
 set(CMAKE_C_STANDARD 99)
+include(GNUInstallDirs)
 option(BUILD_RUNNER "Build the runner" OFF)
 
 # Set the varible to added to the config file
