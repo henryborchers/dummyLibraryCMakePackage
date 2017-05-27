@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(CDummy_library)
 
 set(CMAKE_C_STANDARD 99)
-
+option(BUILD_RUNNER "Build the runner" OFF)
 
 # Set the varible to added to the config file
 set(CDummy_VERSION_MAJOR 0 )
@@ -23,5 +23,7 @@ write_basic_package_version_file(
 # Create a Runner to test library
 #######################################
 
-add_executable(runner runner.c)
-target_link_libraries(runner CDummy)
+if(BUILD_RUNNER)
+    add_executable(runner runner.c)
+    target_link_libraries(runner CDummy)
+ENDIF()
