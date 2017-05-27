@@ -3,7 +3,8 @@
 //
 
 #include <stdio.h>
-#include "library.h"
+#include "cdummy/CDummy.h"
+
 int main(){
 
     puts("Hello from the runner");
