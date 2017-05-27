@@ -2,15 +2,26 @@ cmake_minimum_required(VERSION 3.8)
 project(CDummy_library)
 
 set(CMAKE_C_STANDARD 99)
+
+
+# Set the varible to added to the config file
 set(CDummy_VERSION_MAJOR 0 )
 set(CDummy_VERSION_MINOR 1 )
-configure_file(
-        "${PROJECT_SOURCE_DIR}/version.h.in"
-        "${PROJECT_BINARY_DIR}/version.h"
+set(CDummy_VERSION_PATCH 0 )
+set(CDUMMY_VERSION ${CDummy_VERSION_MAJOR}.${CDummy_VERSION_MINOR}.${CDummy_VERSION_PATCH})
 
+add_subdirectory(cdummy)
+
+#######################################
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyConfigVersion.cmake"
+        VERSION ${CDUMMY_VERSION}
+        COMPATIBILITY AnyNewerVersion
 )
-set(SOURCE_FILES library.c library.h)
-include_directories(${PROJECT_BINARY_DIR})
-add_library(CDummy ${SOURCE_FILES})
+#######################################
+# Create a Runner to test library
+#######################################
+
 add_executable(runner runner.c)
 target_link_libraries(runner CDummy)
