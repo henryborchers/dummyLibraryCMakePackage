@@ -16,4 +16,7 @@ add_library(CDummy ${SOURCE_FILES})
 install(FILES CDummy.h DESTINATION include/cdummy)
 install(TARGETS CDummy EXPORT cdummy-targets DESTINATION lib/cdummy)
 install(EXPORT cdummy-targets DESTINATION lib/cdummy)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cdummyConfigVersion.cmake DESTINATION lib/cmake/cdummy)
+install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummyConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummyConfigVersion.cmake"
+        DESTINATION lib/cmake/cdummy)
