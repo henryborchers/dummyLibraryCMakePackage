@@ -1,5 +1,5 @@
 #include "CDummy.h"
-#include "version.h"
+#include "CDversion.h"
 #include <stdio.h>
 
 void hello(void) {
