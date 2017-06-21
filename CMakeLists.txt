@@ -21,8 +21,10 @@ configure_file(
 include_directories(${PROJECT_BINARY_DIR})
 add_library(CDummy SHARED ${SOURCE_FILES} ${PUBLIC_HEADERS})
 generate_export_header(CDummy)
-set_property(TARGET CDummy PROPERTY VERSION ${CDummy_VERSION})
-set_property(TARGET CDummy PROPERTY INTERFACE_CDummy_VERSION_MAJOR ${CDummy_VERSION})
+set_target_properties(CDummy PROPERTIES
+        VERSION ${CDummy_VERSION}
+        INTERFACE_CDummy_VERSION_MAJOR ${CDummy_VERSION}
+        )
 set_property(TARGET CDummy APPEND PROPERTY
         COMPATIABLE_INTERFACE_STRING CDummy_VERSION_MAJOR
         )
