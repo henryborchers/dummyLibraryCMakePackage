@@ -43,20 +43,20 @@ install(FILES
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyConfigVersion.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/CDummyConfigVersion.cmake"
         VERSION ${CDummy_VERSION}
         COMPATIBILITY AnyNewerVersion
 )
 export(EXPORT CDummyTargets
-        FILE "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyTargets.cmake"
+        FILE "${CMAKE_CURRENT_BINARY_DIR}/cdummy/CDummyTargets.cmake"
         NAMESPACE CDummy::
         )
 
 set(ConfigPackageLocation ${CMAKE_INSTALL_LIBDIR}/cmake/cdummy)
 
 configure_package_config_file(
-        cmake/cdummyConfig.cmake
-        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyConfig.cmake"
+        cmake/CDummyConfig.cmake
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/CDummyConfig.cmake"
         INSTALL_DESTINATION "${ConfigPackageLocation}"
         PATH_VARS CMAKE_INSTALL_INCLUDEDIR
 
@@ -68,8 +68,8 @@ install(EXPORT CDummyTargets
         DESTINATION ${ConfigPackageLocation}
         )
 install(FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyConfig.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/cdummyConfigVersion.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/CDummyConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/cdummy/CDummyConfigVersion.cmake"
         DESTINATION ${ConfigPackageLocation}
         COMPONENT Devel
         )
